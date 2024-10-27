@@ -14,6 +14,7 @@ const descriptions = [
   'Зимняя сказка с снегом'
 ];
 
+
 const users = [
   'Аня',
   'Максим',
@@ -98,4 +99,3 @@ function createPhotoObject() {
 const photo = createPhotoObject();
 // eslint-disable-next-line no-console
 console.log(photo);
-

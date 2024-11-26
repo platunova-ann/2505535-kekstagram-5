@@ -62,7 +62,7 @@ function getRandomComments(count) {
 
     comments.push({
       id: commentId,
-      avatar: `img/avatar-${avatarId}.svg`,
+      avatar: `img/avatar-${avatarId}.svg`,//1
       message: message,
       name: user
     });

@@ -4,7 +4,7 @@ function validateStringLength(inputString, maxLength) {
 
 // Примеры использования функции
 validateStringLength('проверяемая строка', 20); // true
-validateStringLength('проверяемая строка', 18); // true
+validateStringLength('проверяемая строка', 18); //  true
 validateStringLength('проверяемая строка', 10); //  false
 
 function isPalindrome(str) {

@@ -1,4 +1,23 @@
-const usedIds = new Set();
+// main.js
+import { formatString, getRandomNumber } from './modules/util.js';
+import { data, addItem } from './modules/data.js';
+import { renderList } from './modules/render.js';
+import { setupClickHandler } from './modules/events.js';
+
+// DOM-элементы
+const container = document.querySelector('#item-list');
+const addButton = document.querySelector('#add-button');
+
+// Начальный рендер
+renderList(data, container);
+
+// Обработка событий
+setupClickHandler(addButton, () => {
+  const newItem = { id: getRandomNumber(4, 100), name: formatString(' New Item ') };
+  addItem(newItem);
+  renderList(data, container);
+});
+/*const usedIds = new Set();
 const usedUrls = new Set();
 
 const descriptions = [
@@ -98,4 +117,4 @@ function createPhotoObject() {
 // Пример использования
 const photo = createPhotoObject();
 // eslint-disable-next-line no-console
-console.log(photo);
+console.log(photo);*/

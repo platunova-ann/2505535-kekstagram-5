@@ -15,7 +15,7 @@ renderList(data, container);
 setupClickHandler(addButton, () => {
   const newItem = { id: getRandomNumber(4, 100), name: formatString(' New Item ') };
   addItem(newItem);
-  renderList(data, container);
+  renderList(data, container);//11
 });
 /*const usedIds = new Set();
 const usedUrls = new Set();

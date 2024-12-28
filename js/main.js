@@ -1,4 +1,8 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-console */
 import {renderThumbnails} from './thumbnails.js';
+import { getData } from './index.js';
+
 
 //import{getPictures} from './data.js';
 //renderThumbnails(getPictures());

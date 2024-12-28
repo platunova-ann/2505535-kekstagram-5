@@ -1,8 +1,7 @@
-import { renderThumbnails } from './thumbnails.js';
+import {renderThumbnails} from './thumbnails.js';
 
-import{getPictures} from './data.js';
-import { renderThumbnails } from './thumbnails.js';
-renderThumbnails(getPictures());
+//import{getPictures} from './data.js';
+//renderThumbnails(getPictures());
 
 const usedIds = new Set();
 const usedUrls = new Set();
@@ -77,7 +76,7 @@ function getRandomComments(count) {
 }
 
 
-function createPhotoObject() {/
+function createPhotoObject() {
   let id;
 
   // Генерируем уникальный идентификатор и URL
@@ -104,5 +103,5 @@ function createPhotoObject() {/
 
 // Пример использования
 const photo = createPhotoObject();
-renderThumbnails([photo])
+renderThumbnails([photo]);
 

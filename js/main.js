@@ -1,7 +1,7 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-console */
 import {renderThumbnails} from './thumbnails.js';
-import { getData } from './index.js';
+import { getData} from './index.js';
 
 // Загрузка данных с сервера и отображение миниатюр
 getData()
@@ -14,7 +14,6 @@ getData()
     // eslint-disable-next-line no-console
     console.error('Ошибка при загрузке данных:', error.message);
   });
-
 
 //import{getPictures} from './data.js';
 //renderThumbnails(getPictures());
@@ -119,5 +118,5 @@ function createPhotoObject() {
 
 // Пример использования
 const photo = createPhotoObject();
-renderThumbnails([photo]);
+//renderThumbnails([photo]);
 

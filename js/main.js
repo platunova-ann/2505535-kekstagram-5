@@ -77,7 +77,7 @@ function getRandomComments(count) {
 }
 
 
-function createPhotoObject() {
+function createPhotoObject() {/
   let id;
 
   // Генерируем уникальный идентификатор и URL

@@ -18,7 +18,7 @@ function isPalindrome(str) {
   return normalizedStr === reversedStr;
 }
 
-// Примеры использования:
+//  Примеры использования:
 isPalindrome('топот'); // true
 isPalindrome('ДовОд'); // true
 isPalindrome('Кекс'); // false

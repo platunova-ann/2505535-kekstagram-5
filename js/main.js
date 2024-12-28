@@ -1,4 +1,10 @@
-/*const usedIds = new Set();
+import { renderThumbnails } from './thumbnails.js';
+
+import{getPictures} from './data.js';
+import { renderThumbnails } from './thumbnails.js';
+renderThumbnails(getPictures());
+
+const usedIds = new Set();
 const usedUrls = new Set();
 
 const descriptions = [
@@ -98,6 +104,5 @@ function createPhotoObject() {
 
 // Пример использования
 const photo = createPhotoObject();
-// eslint-disable-next-line no-console
-console.log(photo);*/
+renderThumbnails([photo])
 

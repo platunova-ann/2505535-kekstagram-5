@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 const SERVER_URL = 'https://29.javascript.htmlacademy.pro/kekstagram';
 
-const PATHS = {
+const Paths = {
   GET_DATA: '/data',
 };
 
@@ -24,7 +24,7 @@ const loadData = (path, errorMessage) =>
     });
 
 // Функция для получения данных с сервера
-const getData = () => loadData(PATHS.GET_DATA, ErrorMessages.GET_DATA);
+const getData = () => loadData(Paths.GET_DATA, ErrorMessages.GET_DATA);
 getData()
   .then((data) => {
     console.log('Данные успешно загружены:', data);

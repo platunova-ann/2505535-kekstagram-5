@@ -1,4 +1,4 @@
-const usedIds = new Set();
+/*const usedIds = new Set();
 const usedUrls = new Set();
 
 const descriptions = [
@@ -70,6 +70,7 @@ function getRandomComments(count) {
   return comments;
 }
 
+
 function createPhotoObject() {
   let id;
 
@@ -98,4 +99,5 @@ function createPhotoObject() {
 // Пример использования
 const photo = createPhotoObject();
 // eslint-disable-next-line no-console
-console.log(photo);
+console.log(photo);*/
+

@@ -3,6 +3,18 @@
 import {renderThumbnails} from './thumbnails.js';
 import { getData } from './index.js';
 
+// Загрузка данных с сервера и отображение миниатюр
+getData()
+  .then((data) => {
+    // eslint-disable-next-line no-console
+    console.log('Данные успешно загружены:', data);
+    renderThumbnails(data);
+  })
+  .catch((error) => {
+    // eslint-disable-next-line no-console
+    console.error('Ошибка при загрузке данных:', error.message);
+  });
+
 
 //import{getPictures} from './data.js';
 //renderThumbnails(getPictures());

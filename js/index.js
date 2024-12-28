@@ -1,3 +1,5 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-console */
 const SERVER_URL = 'https://29.javascript.htmlacademy.pro/kekstagram';
 
 const PATHS = {

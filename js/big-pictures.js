@@ -14,7 +14,7 @@ const createComment = ({avatar,name,message}) => {
   comment.querySelector('social__text').textContent = message;
 
   return comment;
-};
+};//
 
 const renderComment = (comments) => {
   commentListElement.innerHTML = '';

@@ -15,7 +15,7 @@ const renderIndex = (pictures) => {
     showBigPicture(picture);
   });
 
-};
+};//
 const PATHS = {
   GET_DATA: '/data',
 };

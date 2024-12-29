@@ -3,7 +3,7 @@ const SERVER_URL = 'https://29.javascript.htmlacademy.pro/kekstagram';
 const PATHS = {
   GET_DATA: '/data',
 };
-
+//
 const ErrorMessages = {
   GET_DATA: 'Не удалось загрузить данные с сервера',
 };

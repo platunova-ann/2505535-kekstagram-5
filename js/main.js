@@ -6,7 +6,7 @@ import { getData} from './index.js';
 import { showBigPicture } from './big-pictures.js';
 
 // Пример данных, которые вы хотите отобразить
-const pictureData = {
+const pictureData = { //
   url: 'path/to/image.jpg',
   likes: 100,
   description: 'Описание изображения',

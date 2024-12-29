@@ -6,6 +6,6 @@ const getRandomIdElement = (array) => {
       lastGeneratedId +=1;
       return lastGeneratedId
     }
-  }
+  }//
 }
 export {/*getRandomInteger,*/ getRandomIdElement, createIdGenerator};

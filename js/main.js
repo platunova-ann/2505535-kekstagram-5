@@ -7,29 +7,29 @@ import { showBigPicture } from './big-pictures.js';
 
 // Пример данных, которые вы хотите отобразить
 const pictureData = { //
-  url: 'path/to/image.jpg',
+  url: '../photos/1.jpg',
   likes: 100,
   description: 'Описание изображения',
   comments: [
     {
-      avatar: 'path/to/avatar1.jpg',
+      avatar: '../img/avatar-1.svg',
       name: 'Имя пользователя 1',
       message: 'Комментарий 1'
     },
     {
-      avatar: 'path/to/avatar2.jpg',
+      avatar: '../img/avatar-2.svg',
       name: 'Имя пользователя 2',
       message: 'Комментарий 2'
     }
   ]
 };
 
-// Пример элемента, который будет вызывать отображение большого изображения
-const pictureElement = document.querySelector('.picture');
-
-pictureElement.addEventListener('click', () => {
+document.querySelector('.pictures').addEventListener('click', ({target}) => {
+  if (!target.closest('a[class = \'picture\']')) {
+    return;
+  }
   showBigPicture(pictureData);
-//import { showBigPicture } from './big-pictures.js';
+});
 
 // Загрузка данных с сервера и отображение миниатюр
 getData()

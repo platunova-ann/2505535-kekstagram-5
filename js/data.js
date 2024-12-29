@@ -1,4 +1,4 @@
-import { getRandomInteger } from './utils.js';
+import { getRandomInteger } from './util.js';
 import { getComment } from './comments.js';
 
 // Генерация фото

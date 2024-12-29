@@ -3,6 +3,34 @@
 import {renderThumbnails} from './thumbnails.js';
 import { getData} from './index.js';
 
+import { showBigPicture } from './big-pictures.js';
+
+// Пример данных, которые вы хотите отобразить
+const pictureData = {
+  url: 'path/to/image.jpg',
+  likes: 100,
+  description: 'Описание изображения',
+  comments: [
+    {
+      avatar: 'path/to/avatar1.jpg',
+      name: 'Имя пользователя 1',
+      message: 'Комментарий 1'
+    },
+    {
+      avatar: 'path/to/avatar2.jpg',
+      name: 'Имя пользователя 2',
+      message: 'Комментарий 2'
+    }
+  ]
+};
+
+// Пример элемента, который будет вызывать отображение большого изображения
+const pictureElement = document.querySelector('.picture');
+
+pictureElement.addEventListener('click', () => {
+  showBigPicture(pictureData);
+//import { showBigPicture } from './big-pictures.js';
+
 // Загрузка данных с сервера и отображение миниатюр
 getData()
   .then((data) => {
@@ -118,6 +146,6 @@ function createPhotoObject() {
 }
 
 // Пример использования
-const photo = createPhotoObject();
+createPhotoObject();
 //renderThumbnails([photo]);
 

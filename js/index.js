@@ -1,5 +1,21 @@
+import { showBigPicture } from './big-pictures.js';
 const SERVER_URL = 'https://29.javascript.htmlacademy.pro/kekstagram';
 
+
+const renderIndex = (pictures) => {
+  container.addEventListener('click', (evt) =>{
+    const thumbnail = evt.target.closest(['data-thubnail-id']);
+    if(!thumbnail){
+      return;
+    }
+    evt.preventDefault();
+    const picture = pictures.find(
+      (item) => item.id === +thumbnail.dataset.thumbnailId
+    );
+    showBigPicture(picture);
+  });
+
+};
 const PATHS = {
   GET_DATA: '/data',
 };
@@ -42,6 +58,19 @@ const createThumbnail = ({ comments, description, likes, url }) => {
 
 // Функция для отображения всех миниатюр
 const renderThumbnails = (pictures) => {
+  container.addEventListener('click',(evt) => {
+    const thumbnail = evt.target.closest('[data-thumbnail-id]');
+    if (!thumbnail){
+      return;
+    }
+    evt.preventDefault();
+    const picture = pictures.find(
+      (item) => item.id === +thumbnail.dataset.thumbnailId
+    );
+    showBigPicture(picture);
+  });
+  renderThumbnails(pictures, container);
+
   // Очищаем контейнер перед добавлением новых миниатюр
   container.innerHTML = '';
 
@@ -56,4 +85,4 @@ const renderThumbnails = (pictures) => {
 };
 
 // Экспорт функций
-export { getData, renderThumbnails };
+export { getData, renderThumbnails};

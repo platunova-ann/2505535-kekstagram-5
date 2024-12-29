@@ -18,6 +18,7 @@ getData()
 //import{getPictures} from './data.js';
 //renderThumbnails(getPictures());
 
+
 const usedIds = new Set();
 const usedUrls = new Set();
 

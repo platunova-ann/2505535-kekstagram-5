@@ -1,4 +1,3 @@
-
 const SERVER_URL = 'https://29.javascript.htmlacademy.pro/kekstagram';
 
 const PATHS = {

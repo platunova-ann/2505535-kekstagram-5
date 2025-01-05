@@ -15,10 +15,10 @@ const createComment = ({avatar,name,message}) => {
 
   return comment;
 };//
-
+//
 const renderComment = (comments) => {
   commentListElement.innerHTML = '';
-
+//
   const fragment = document.createDocumentFragment();
   comments.forEach((item) => {
     const comment = createComment(item);

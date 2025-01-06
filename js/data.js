@@ -1,6 +1,16 @@
 import { getRandomInteger } from './util.js';
 import { getComment } from './comments.js';
 
+const data = [
+  { id: 1, name: 'Item 1' },
+  { id: 2, name: 'Item 2' },
+  { id: 3, name: 'Item 3' },
+];
+
+function addItem(item) {
+  data.push(item);
+}
+
 // Генерация фото
 // Функция для получения описания фотографии
 const getPhotoDescription = () => {
@@ -23,4 +33,4 @@ const getPhoto = () => {
   };
 };
 
-export {getPhoto};
+export { getPhoto, addItem, data };

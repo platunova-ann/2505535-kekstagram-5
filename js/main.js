@@ -1,35 +1,11 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-console */
 import {renderThumbnails} from './thumbnails.js';
-import { getData} from './index.js';
+import { getData} from './api.js';
 
 import { showBigPicture } from './big-pictures.js';
 
-// Пример данных, которые вы хотите отобразить
-const pictureData = { //
-  url: '../photos/1.jpg',
-  likes: 100,
-  description: 'Описание изображения',
-  comments: [
-    {
-      avatar: '../img/avatar-1.svg',
-      name: 'Имя пользователя 1',
-      message: 'Комментарий 1'
-    },
-    {
-      avatar: '../img/avatar-2.svg',
-      name: 'Имя пользователя 2',
-      message: 'Комментарий 2'
-    }
-  ]
-};
 
-document.querySelector('.pictures').addEventListener('click', ({target}) => {
-  if (!target.closest('a[class = \'picture\']')) {
-    return;
-  }
-  showBigPicture(pictureData);
-});
 
 // Загрузка данных с сервера и отображение миниатюр
 getData()
@@ -37,6 +13,13 @@ getData()
     // eslint-disable-next-line no-console
     console.log('Данные успешно загружены:', data);
     renderThumbnails(data);
+    document.querySelector('.pictures').addEventListener('click', ({target}) => {
+      const picture = target.closest('a[class = \'picture\']');
+      if (!picture) {
+        return;
+      }
+      showBigPicture(data[picture.dataset.thumbnailsId]);
+    });
   })
   .catch((error) => {
     // eslint-disable-next-line no-console

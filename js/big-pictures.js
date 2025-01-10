@@ -4,9 +4,11 @@ const commentListElement = bigPictureElement.querySelector('.social__comments');
 const commentsLoaderElement = bigPictureElement.querySelector('.comments-loader');
 const bodyElement = document.body;
 const cancelButtonElement = bigPictureElement.querySelector('.cancel');
-const commentElement = document.querySelector('#comment').content.querySelector('.social__comment');
+const commentElement = (
+  document.querySelector('#comment').content.querySelector('.social__comment')
+);
 
-const createComment = ({avatar,name,message}) => {
+const createComment = ({ avatar, name, message }) => {
   const comment = commentElement.cloneNode(true);
 
   comment.querySelector('.social__picture').src = avatar;
@@ -14,39 +16,53 @@ const createComment = ({avatar,name,message}) => {
   comment.querySelector('.social__text').textContent = message;
 
   return comment;
-};//
-//
+
+};
+
 const renderComment = (comments) => {
   commentListElement.innerHTML = '';
-//
+
   const fragment = document.createDocumentFragment();
+
   comments.forEach((item) => {
+
     const comment = createComment(item);
+
     fragment.append(comment);
+
   });
+
   commentListElement.append(fragment);
 
 };
+
 const hideBigPicture = () => {
   bigPictureElement.classList.add('hidden');
   bodyElement.classList.remove('modal-open');
+
   document.removeEventListener('keydown', onDocumentKeydown);
 };
+
 function onDocumentKeydown(evt){
-  if(evt.key === 'Escape') {
+
+  if (evt.key === 'Escape') {
     evt.preventDefault();
     hideBigPicture();
   }
-};
+
+}
+
 const onCancelButtonClick = () => {
   hideBigPicture();
 };
 
-const renderPicturesDetails = ({url, likes, description}) => {
+const renderPicturesDetails = ({ url, likes, description }) => {
+
   bigPictureElement.querySelector('.big-picture__img img').src = url;
   bigPictureElement.querySelector('.big-picture__img img').alt = description;
   bigPictureElement.querySelector('.likes-count').textContent = likes;
   bigPictureElement.querySelector('.social__caption').textContent = description;
+
 };
 
 const showBigPicture = (data) => {
@@ -54,11 +70,13 @@ const showBigPicture = (data) => {
   bodyElement.classList.add('modal-open');
   commentsLoaderElement.classList.add('hidden');
   commentCountElement.classList.add('hidden');
+
   document.addEventListener('keydown', onDocumentKeydown);
 
   renderPicturesDetails(data);
   renderComment(data.comments);
+
 };
 
-cancelButtonElement.addEventListener('click',onCancelButtonClick);
-export{showBigPicture};
+cancelButtonElement.addEventListener('click', onCancelButtonClick);
+export{ showBigPicture };
